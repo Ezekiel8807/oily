@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon index.js",
-    "client": "cd fontend && npm start",
+    "client": "cd client && npm start",
     "dev": "concurrently \"nodemon index.js\" \"npm run client\""
   },
   "keywords": [

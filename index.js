@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 
 //controller
 // import DataBase from './dataBase.js';
-// import UserController from './Router/controller.js';
+import UserController from './Router/controller.js';
 // import AdminController from './Router/AdminController.js';
 
 
@@ -34,21 +34,16 @@ oily.use(bodyParser.json());
 oily.use(bodyParser.urlencoded({ extended: false }));
 
 //static folders
-oily.use(Express.static(path.join(__dirname + '/fontend/build')));
+oily.use(Express.static(path.join(__dirname + '/client/build')));
 
 
 // express entry point
-oily.get("/api", (res, req) => {
-    res.send("hello there");
-    res.end();
-});
-
-// getpalmoil.use("/api", UserController);
+oily.use("/api", UserController);
 // getpalmoil.use("/api/admin", AdminController);
 
 //not found routes
 oily.use("*", (req, res) => {
-    res.sendFile(path.join(__dirname + '/fontend/build',  'index.html'));
+    res.sendFile(path.join(__dirname + '/client/build',  'index.html'));
 });
 
 //server listening port
