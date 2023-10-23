@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "nodemon index.js",
     "build": "npm i",
+    "client": "cd client && npm start",
     "dev": "concurrently \"nodemon index.js\" \"npm run client\""
   },
   "keywords": [
